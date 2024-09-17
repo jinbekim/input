@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import VueInput from '../components/VueInput.vue';
 import { ReactInput } from '../components/ReactInput';
+import { LitInput } from '../components/LitInput';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -18,6 +19,10 @@ import { ReactInput } from '../components/ReactInput';
 			<li>
 				<label for="ReactInput"> React Input </label>
 				<ReactInput client:idle />
+			</li>
+			<li>
+				<label for="LitInput"> Lit Input </label>
+				<LitInput client:idle />
 			</li>
 		</ul>
 	</main>
