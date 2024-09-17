@@ -4,9 +4,10 @@ import VueInput from '../components/VueInput.vue';
 import { ReactInput } from '../components/ReactInput';
 import { LitInput } from '../components/LitInput';
 import SvelteInput from '../components/SvelteInput.svelte';
+import VanilarInput from '../components/VanilarInput.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="인풋 비교하기">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
@@ -28,6 +29,10 @@ import SvelteInput from '../components/SvelteInput.svelte';
 			<li>
 				<label for="SvelteInput"> Svelte Input </label>
 				<SvelteInput client:idle />
+			</li>
+			<li>
+				<label for="VanilarInput"> Vanilar Input </label>
+				<VanilarInput client:idle />
 			</li>
 		</ul>
 	</main>

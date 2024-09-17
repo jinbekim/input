@@ -1,0 +1,14 @@
+<script>
+const _input = document.getElementById('VanillaInput');
+
+_input?.addEventListener('input', (event) => {
+  const target = event.target as HTMLInputElement;
+
+  (_input as HTMLInputElement).value = target.value + '!';
+});
+</script>
+
+<input
+  id="VanillaInput"
+  name="VanillaInput"
+/>
