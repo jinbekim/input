@@ -1,19 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VueInput from '../components/VueInput.vue';
+import { ReactInput } from '../components/ReactInput';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
-			<strong>Instructions:</strong> This is a simple example of how to use Vue components in Astro. The Vue component below is a simple input field that updates the value of the input field in real-time. The value of the input field is then displayed below the input field.
+			Select an input to see how it behaves.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<li>
-				<label for="vueInput"> Vue Input </label>
+				<label for="VueInput"> Vue Input </label>
 				<VueInput client:idle />
+			</li>
+			<li>
+				<label for="ReactInput"> React Input </label>
+				<ReactInput client:idle />
 			</li>
 		</ul>
 	</main>
 </Layout>
+
+<style>
+	li {
+		list-style-type: none;
+		margin-bottom: 1rem;
+	}
+</style>
