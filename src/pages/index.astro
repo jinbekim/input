@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import VueInput from '../components/VueInput.vue';
 import { ReactInput } from '../components/ReactInput';
 import { LitInput } from '../components/LitInput';
+import SvelteInput from '../components/SvelteInput.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,6 +24,10 @@ import { LitInput } from '../components/LitInput';
 			<li>
 				<label for="LitInput"> Lit Input </label>
 				<LitInput client:idle />
+			</li>
+			<li>
+				<label for="SvelteInput"> Svelte Input </label>
+				<SvelteInput client:idle />
 			</li>
 		</ul>
 	</main>
