@@ -7,17 +7,26 @@ export class LitInput extends LitElement {
   @state()
   private _value: string = "";
 
-  handleInput(event: InputEvent) {
-    const target = event.target as HTMLInputElement;
-    this._value = target.value + '!';
+  handleInput(e: InputEvent) {
+    this._value = (e.target as HTMLInputElement).value + '!';
+
+    const value = this.shadowRoot?.getElementById('value');
+    if (value) {
+      value.textContent = ' value: ' + this._value;
+    }
   }
 
   render() {
-    return html`<input
+    return html`<div style="display: inline" >
+    <input
       name="LitInput"
       id="LitInput"
+      autocomplete="off"
       .value=${this._value}
       @input=${this.handleInput}
-    />`;
+    />
+    <span id="value"> value: </span>
+    </div>
+    `;
   }
 }

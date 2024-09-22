@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type EventHandler } from "react";
 
 export const ReactInput = () => {
   const [inputValue, setInputValue] = useState('');
-
+  const onInputChange: EventHandler<ChangeEvent<HTMLInputElement>> = (e) => {
+    const value = e.target.value + '!';
+    setInputValue(value);
+  }
   return (
+    <div style={{display: 'inline'}}>
+
     <input
-      name="ReactInput"
-      id="ReactInput"
       value={inputValue}
-      onChange={(e) => setInputValue(e.target.value + '!')}
-    />
+      onChange={onInputChange}
+      />
+      <span> value: {inputValue} </span>
+      </div>
   );
 }

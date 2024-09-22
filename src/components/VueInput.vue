@@ -1,5 +1,10 @@
 <template>
-  <input :value="value" name="VueInput" id="VueInput" @input="onInput">
+  <div style="display: inline;">
+    <input v-model="value" name="VueInput" id="VueInput" @input="onInput"
+    autocomplete="off"
+    >
+    <span> value: {{ value }}</span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -13,5 +18,4 @@ const onInput = (e: Event) => {
 </script>
 
 <style scoped>
-
 </style>

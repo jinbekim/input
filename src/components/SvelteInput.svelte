@@ -1,15 +1,18 @@
-<script>
+<script lang="ts">
+  import type { FormEventHandler } from "svelte/elements";
   let value = '';
 
-  const handleInput = (e) => {
-    value = e.target.value + '!';
+  const handleInput: FormEventHandler<HTMLInputElement> = (e) => {
+    value = e.currentTarget.value + '!';
+
   };
 </script>
 
-<input
-  id="SvelteInput"
-  name="SvelteInput"
-  type="text"
-  value="{value}"
+<div style="display: inline;">
+  <input
+  autocomplete="off"
+  bind:value="{value}"
   on:input={handleInput}
-/>
+  />
+  <span> value: {value}</span>
+</div>

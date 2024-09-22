@@ -1,0 +1,21 @@
+<script>
+const _input = document.getElementById('VanillaInput') as HTMLInputElement;
+let _value = '';
+
+_input?.addEventListener('input', (e) => {
+  _value = (e.target as HTMLInputElement).value + '!';
+  _input.value = _value;
+
+  const value = document.getElementById('value')!;
+  value.textContent = 'Value: ' + _value;
+});
+</script>
+
+<div style="display: inline;">
+  <input
+    id="VanillaInput"
+    autocomplete="off"
+    name="VanillaInput"
+  />
+  <span id="value" > value: </span>
+</div>
